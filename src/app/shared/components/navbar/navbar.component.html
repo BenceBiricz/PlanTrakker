@@ -1,4 +1,8 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+<nav
+  #navbar
+  class="navbar sticky-top navbar-expand-lg navbar-background"
+  (scroll)="onScroll($event)"
+>
   <div class="container-fluid">
     <div class="container">
       <button
@@ -13,7 +17,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav nav-container">
+        <div #navLinks class="nav-container">
           <a class="nav-link" routerLink="main" routerLinkActive="active"
             >Home</a
           >
@@ -21,7 +25,7 @@
             >Packages</a
           >
           <a class="nav-link" routerLink="/blogs" routerLinkActive="active"
-            >Community</a
+            >Blogs</a
           >
         </div>
       </div>

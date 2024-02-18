@@ -1,2 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap-icons/font/bootstrap-icons.css";
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.sub-title {
+  font-size: 2.5rem;
+  padding-bottom: 25px;
+}
+
+.btn-large {
+  width: 30vh;
+  height: 10vh;
+  border-radius: 15px;
+  font-size: 2rem !important;
+}
+
+body {
+  background-color: #f2f2f2 !important;
+}

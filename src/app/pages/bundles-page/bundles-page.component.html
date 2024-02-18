@@ -1,13 +1,24 @@
-<div class="bundles-container">
-  <div class="card text-white bg-dark mb-3" style="max-width: 18rem">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-      <h5 class="card-title">Dark card title</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </p>
-      <a (click)="navigateToPackage()" class="btn btn-success btn-card">Open</a>
+<div class="container page-content-container">
+  <div class="bundles-container">
+    <div class="title">Different packages</div>
+
+    <div class="card-container">
+      <div *ngFor="let card of packageCards" class="card-item">
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem">
+          <div class="card-header">{{ card.header }}</div>
+          <div class="card-body">
+            <h5 class="card-title">{{ card.title }}</h5>
+            <p class="card-text">
+              {{ card.body }}
+            </p>
+            <a
+              (click)="navigateToPackage(card)"
+              class="btn btn-success btn-card"
+              >Open</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,59 +1,159 @@
-.video-gradient {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 5%,
-    rgba(255, 255, 255, 1) 10%,
-    rgba(255, 255, 255, 0) 50%
-  );
-  z-index: -1;
-}
+// .video-gradient {
+//   position: absolute;
+//   top: 0;
+//   left: 50%;
+//   width: 100%;
+//   height: 100vh;
+//   background: linear-gradient(
+//     90deg,
+//     rgba(255, 255, 255, 1) 5%,
+//     rgba(255, 255, 255, 1) 10%,
+//     rgba(255, 255, 255, 0) 50%
+//   );
+//   z-index: -99;
+// }
 
-.video-container {
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-}
+// .video-container {
+//   position: absolute;
+//   overflow: hidden;
+//   top: 0;
+//   left: 0;
+//   height: 100vh;
+//   width: 100%;
+//   z-index: -101;
+// }
 
-.video-background {
-  position: absolute;
-  z-index: -10;
-  left: 50%;
-  top: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
+// .video-background {
+//   position: absolute;
+//   z-index: -100;
+//   left: 50%;
+//   top: 0;
+//   min-width: 100%;
+//   min-height: 100%;
+// }
 
-.title-container {
-  position: absolute;
-  top: 0;
+.content-container {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 15px;
 }
 
-.title {
-  padding-top: 180px;
-  padding-bottom: 10px;
-  font-size: 4rem;
-  font-weight: bold;
+.typewriter-content {
+  display: inline-block;
+  width: fit-content;
 }
 
-.sub-title {
-  font-size: 2.5rem;
-  padding-bottom: 25px;
+.main-title {
+  font-size: 6rem;
+  font-weight: 800;
+  width: fit-content;
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 1s steps(50, end) forwards, blink 1.5s infinite;
 }
 
-.btn-large {
-  width: 30vh;
-  height: 10vh;
-  border-radius: 15px;
-  font-size: 2rem;
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: orange;
+  }
+}
+
+.title-2 {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: -30px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Change this according to your layout preference */
+  align-items: center;
+}
+
+.flex-item {
+  flex-basis: calc(
+    33.33% - 20px
+  ); /* Adjust this value according to your needs */
+  margin: 10px; /* Adjust margin as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Crop the video if it overflows */
+  border-radius: 10px;
+
+  position: relative;
+
+  transition: transform 0.5s;
+}
+
+.video-cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: 0; //sets the pseudo full width full height
+  background: linear-gradient(180deg, rgba(21, 22, 24, 0.24) 0%, #151618 100%);
+  opacity: 0;
+
+  transition: opacity 0.5s ease-in-out;
+}
+
+.flex-item:hover {
+  transform: scale(140%);
+  z-index: 2;
+  opacity: 1;
+}
+
+.flex-item:hover .video-cover::before {
+  opacity: 1;
+}
+
+.flex-item:hover .video-caption {
+  opacity: 1;
+}
+
+.video-caption {
+  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  color: antiquewhite;
+  opacity: 0;
+
+  transition: opacity 0.5s ease-in-out;
+}
+
+.video-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.video {
+  width: 100%;
+  height: 15em;
+  object-fit: cover; /* Crop the video to cover the container */
+}
+
+.icon-lg {
+  font-size: 30px;
+  z-index: 10;
+  color: antiquewhite;
 }

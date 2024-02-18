@@ -1,5 +1,18 @@
 .bundles-container {
-  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-item {
+  flex-grow: 1;
 }
 
 .btn-card {

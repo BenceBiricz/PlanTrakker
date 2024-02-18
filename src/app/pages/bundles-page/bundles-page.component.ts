@@ -1,3 +1,4 @@
+import { BundlesInterface } from './interfaces/bundle-interface';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 
@@ -6,23 +7,59 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   templateUrl: './bundles-page.component.html',
   styleUrl: './bundles-page.component.scss',
 })
-export class BundlesPageComponent {
-  packageId = 0;
-  packageName = 'firstName';
-
-  max = 100;
-  min = 0;
+export class BundlesPageComponent implements OnInit {
+  packageCards: BundlesInterface[] = [];
 
   constructor(private readonly route: Router) {}
 
-  createId() {
-    this.packageId =
-      Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
+  ngOnInit() {
+    this.packageCards.push(
+      {
+        id: this.createId(),
+        header: 'Header1',
+        title: 'First',
+        body: 'Sample',
+      },
+      {
+        id: this.createId(),
+        header: 'Header2',
+        title: 'Second',
+        body: 'Sample',
+      },
+      {
+        id: this.createId(),
+        header: 'Header3',
+        title: 'Third',
+        body: 'Sample',
+      },
+      {
+        id: this.createId(),
+        header: 'Header3',
+        title: 'Third',
+        body: 'Sample',
+      },
+      {
+        id: this.createId(),
+        header: 'Header3',
+        title: 'Third',
+        body: 'Sample',
+      },
+      {
+        id: this.createId(),
+        header: 'Header3',
+        title: 'Third',
+        body: 'Sample',
+      }
+    );
   }
 
-  navigateToPackage() {
-    this.createId();
+  createId() {
+    let max = 9999;
+    let min = 1000;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 
-    this.route.navigate(['/packages', this.packageId, this.packageName]);
+  navigateToPackage(packageCard: BundlesInterface) {
+    this.route.navigate(['/packages', packageCard.id, packageCard.title]);
   }
 }
