@@ -1,31 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
+// Set the MOBILE view
 :root {
-  --video-padding: 5%;
+  --video-padding: 7%;
   --video-xl: 15rem;
+  --video-flex-percent: 50%;
+  --video-hight: 13rem;
 
-  --fs-main: 2rem;
+  --fs-main: clamp(2rem, 8vw, 6rem);
+  --fs-video-caption: clamp(0.5rem, 1rem, 2rem);
   --fs-xl: 2.5rem;
   --fs-600: 1.5rem;
   --fs-400: 0.5rem;
 }
 
+// Set the DESKTOP view
 @media (min-width: 550px) {
   :root {
-    --video-padding: 0;
+    --video-padding: 0%;
     --video-xl: 15rem;
+    --video-flex-percent: 33.33%;
+    --video-hight: 15rem;
 
-    --fs-main: 5rem;
     --fs-xl: 3rem;
     --fs-600: 2rem;
     --fs-400: 1rem;
   }
 }
 
-@media only screen and (min-width: 550px) and (max-width: 900px) {
+@media (min-width: 550px) and (max-width: 1100px) {
   :root {
-    --fs-main: 4rem;
+    --video-flex-percent: 50%;
+    --video-padding: 4% !important;
   }
 }
 
