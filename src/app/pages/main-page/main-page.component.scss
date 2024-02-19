@@ -1,42 +1,9 @@
-// .video-gradient {
-//   position: absolute;
-//   top: 0;
-//   left: 50%;
-//   width: 100%;
-//   height: 100vh;
-//   background: linear-gradient(
-//     90deg,
-//     rgba(255, 255, 255, 1) 5%,
-//     rgba(255, 255, 255, 1) 10%,
-//     rgba(255, 255, 255, 0) 50%
-//   );
-//   z-index: -99;
-// }
-
-// .video-container {
-//   position: absolute;
-//   overflow: hidden;
-//   top: 0;
-//   left: 0;
-//   height: 100vh;
-//   width: 100%;
-//   z-index: -101;
-// }
-
-// .video-background {
-//   position: absolute;
-//   z-index: -100;
-//   left: 50%;
-//   top: 0;
-//   min-width: 100%;
-//   min-height: 100%;
-// }
-
 .content-container {
-  height: 100vh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 15px;
 }
 
@@ -45,8 +12,18 @@
   width: fit-content;
 }
 
+.btn-main {
+  border-radius: 50px;
+
+  transition: transform 0.4s;
+}
+
+.btn-main:hover {
+  transform: scale(120%);
+}
+
 .main-title {
-  font-size: 6rem;
+  font-size: var(--fs-main);
   font-weight: 800;
   width: fit-content;
   overflow: hidden;
@@ -74,10 +51,8 @@
   }
 }
 
-.title-2 {
+.section-title {
   text-align: center;
-  margin-bottom: 50px;
-  margin-top: -30px;
 }
 
 .flex-container {
@@ -85,6 +60,8 @@
   flex-wrap: wrap;
   justify-content: space-around; /* Change this according to your layout preference */
   align-items: center;
+  padding-left: var(--video-padding);
+  padding-right: var(--video-padding);
 }
 
 .flex-item {
@@ -137,6 +114,7 @@
   position: absolute;
   color: antiquewhite;
   opacity: 0;
+  font-size: var(--fs-400);
 
   transition: opacity 0.5s ease-in-out;
 }
@@ -148,7 +126,7 @@
 
 .video {
   width: 100%;
-  height: 15em;
+  height: 15rem;
   object-fit: cover; /* Crop the video to cover the container */
 }
 
@@ -156,4 +134,49 @@
   font-size: 30px;
   z-index: 10;
   color: antiquewhite;
+}
+
+.btn-huge {
+  font-size: var(--fs-xl);
+}
+
+.btn-bottom-corner {
+  position: fixed;
+  right: 3%;
+  bottom: 5%;
+}
+
+.btn-bounce {
+  animation: bounce 0.7s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+.bottom-text {
+  font-weight: 900;
+  font-size: var(--fs-600);
+  margin: 3% 3% 10% 3%;
+}
+
+.footer-container {
+  padding-top: 10px;
+  min-height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 3em;
+}
+
+.footer-container-inner {
+  display: flex;
+  justify-content: end;
+  gap: 3em;
 }

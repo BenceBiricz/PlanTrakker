@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { VideoInterface } from './interfaces/video-interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
@@ -7,7 +14,10 @@ import { VideoInterface } from './interfaces/video-interface';
   styleUrl: './main-page.component.scss',
 })
 export class MainPageComponent implements OnInit {
+  @ViewChild('backButton') backButton!: ElementRef;
   adVideos: VideoInterface[] = [];
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.adVideos.push(
@@ -42,5 +52,21 @@ export class MainPageComponent implements OnInit {
         videoUrl: 'assets/pool.mp4',
       }
     );
+  }
+
+  srollTo(fragment: string) {
+    this.router.navigateByUrl('main#' + fragment);
+  }
+
+  @HostListener('window:scroll', ['$event']) // for window scroll events
+  onScroll($event: any) {
+    const threshold = 500; // Change this value to set the scroll threshold for background color change
+    const button = this.backButton.nativeElement.style;
+
+    const verticalOffset =
+      document.documentElement.scrollTop || document.body.scrollTop || 0;
+    if (verticalOffset > threshold) {
+      button.opacity = 1;
+    }
   }
 }

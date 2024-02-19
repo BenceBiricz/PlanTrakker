@@ -1,23 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
+:root {
+  --video-padding: 5%;
+  --video-xl: 15rem;
+
+  --fs-main: 2rem;
+  --fs-xl: 2.5rem;
+  --fs-600: 1.5rem;
+  --fs-400: 0.5rem;
+}
+
+@media (min-width: 550px) {
+  :root {
+    --video-padding: 0;
+    --video-xl: 15rem;
+
+    --fs-main: 5rem;
+    --fs-xl: 3rem;
+    --fs-600: 2rem;
+    --fs-400: 1rem;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 900px) {
+  :root {
+    --fs-main: 4rem;
+  }
+}
+
 .title {
-  font-size: 4rem;
+  font-size: var(--fs-xl);
   font-weight: 800;
 }
 
 .sub-title {
-  font-size: 2.5rem;
+  font-size: var(--fs-600);
   padding-bottom: 25px;
+  text-align: center;
 }
 
 .btn-large {
   width: 30vh;
   height: 10vh;
   border-radius: 15px;
-  font-size: 2rem !important;
+  font-size: var(--fs-600) !important;
+}
+
+.btn-black {
+  color: black;
+
+  transition: color 0.4s;
+}
+
+.btn-black:hover {
+  color: #808080;
+  cursor: pointer;
 }
 
 body {
   background-color: #f2f2f2 !important;
+  scroll-behavior: smooth !important;
 }

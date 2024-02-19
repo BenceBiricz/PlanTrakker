@@ -1,7 +1,5 @@
 <nav
-  #navbar
-  class="navbar sticky-top navbar-expand-lg navbar-background"
-  (scroll)="onScroll($event)"
+  class="navbar sticky-top navbar-expand-lg navbar-background scroll-watcher"
 >
   <div class="container-fluid">
     <div class="container">
@@ -17,7 +15,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div #navLinks class="nav-container">
+        <div class="nav-container">
+          <img src="assets/icon.png" alt="" style="height: 70px" />
           <a class="nav-link" routerLink="main" routerLinkActive="active"
             >Home</a
           >
