@@ -1,11 +1,21 @@
 <div class="container">
-  <section class="content-container">
-    <div class="title">BLogs</div>
-  </section>
+  <section class="package-page-container">
+    <div class="blog-title">Want to get some more ideas?</div>
 
-  <hr />
+    <div class="blog-flexbox">
+      <button class="btn scrollToEnd">
+        <i class="bi bi-arrow-bar-right"></i>
+      </button>
 
-  <section>
-    <div style="height: 100vh"></div>
+      <div *ngFor="let blog of blogs">
+        <div class="blog-card" (click)="onClick(blog.url)">
+          <img class="package-img" [src]="blog.img" alt="" />
+          <div class="blog-content">
+            <h4>{{ blog.title }}</h4>
+            <h6>{{ blog.text }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </div>

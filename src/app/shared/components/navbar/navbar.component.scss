@@ -29,16 +29,16 @@
 }
 
 .nav-link {
-  font-size: 1.5em;
-  font-weight: 500;
+  padding: 2% 0;
+  font-size: 2rem;
 }
 
 a {
-  transition: transform 0.4s;
+  transition: transform 0.5s;
 }
 
 a:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(115%);
 }
 
 .active {
