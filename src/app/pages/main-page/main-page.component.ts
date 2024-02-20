@@ -64,9 +64,11 @@ export class MainPageComponent implements OnInit {
     const button = this.backButton.nativeElement.style;
 
     const verticalOffset =
-      document.documentElement.scrollTop || document.body.scrollTop || 0;
+      document.documentElement.scrollTop || document.body.scrollTop;
     if (verticalOffset > threshold) {
       button.opacity = 1;
+    } else {
+      button.opacity = 0;
     }
   }
 }

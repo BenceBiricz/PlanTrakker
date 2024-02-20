@@ -1,9 +1,3 @@
-.bundles-container {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-
 .card-container {
   display: flex;
   flex-direction: row;
@@ -17,4 +11,49 @@
 
 .btn-card {
   width: auto;
+}
+
+.package-title {
+  margin-top: 5%;
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  text-align: center;
+  max-width: 50vw;
+  // background: -webkit-linear-gradient(-90deg, #a9a9a9, black);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+}
+
+.package-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.package-container {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.package-content {
+  padding: 7% 3%;
+  height: 50vh;
+  width: 25vw;
+}
+
+.package-img {
+  object-fit: cover;
+  width: 40vw;
+  border-radius: 20px;
+
+  transition: transform 0.4s ease-in-out;
+}
+
+.package-img:hover {
+  transform: scale(95%);
+  box-shadow: 10px 10px 50px rgb(0, 0, 0, 0.4);
 }

@@ -1,5 +1,5 @@
 import { BundlesInterface } from './interfaces/bundle-interface';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({

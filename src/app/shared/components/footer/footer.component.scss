@@ -1,0 +1,22 @@
+.footer-container {
+  padding-top: 10px;
+  min-height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 3em;
+}
+
+.footer-container-inner {
+  display: flex;
+  justify-content: end;
+  gap: 3em;
+}
+
+.footer-title {
+  margin-bottom: 1rem;
+}
+
+.item-width {
+  min-width: 300px;
+}
