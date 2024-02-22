@@ -1,49 +1,62 @@
-.image-cont {
-  right: 0%;
-  top: 33%;
+// .image-cont {
+//   right: 0%;
+//   top: 33%;
+//   position: absolute;
+//   height: 100vh;
+//   width: 100vh;
+//   z-index: -1;
+// }
+
+// .background-div {
+//   position: relative;
+//   background-image: url("/assets/airplane-f-small.png");
+//   background-size: contain; /* Maintain aspect ratio */
+//   background-repeat: no-repeat; /* Prevent repeating the image */
+//   background-position: center; /* Center the image */
+//   height: 100%; /* Adjust height as needed */
+// }
+
+// -------------------------------------------------- Background Video --------------------------------------------------
+.background-video {
   position: absolute;
-  height: 100vh;
-  width: 100vh;
-  z-index: -1;
+  right: 0;
+  bottom: 0;
+  z-index: -100;
+  width: 100%;
+
+  overflow: hidden; /* Crop the video if it overflows */
 }
 
-.background-div {
-  position: relative;
-  background-image: url("/assets/airplane-f-small.png");
-  background-size: contain; /* Maintain aspect ratio */
-  background-repeat: no-repeat; /* Prevent repeating the image */
-  background-position: center; /* Center the image */
-  height: 100%; /* Adjust height as needed */
+@media (min-aspect-ratio: 16/9) {
+  .background-video {
+    width: 100%;
+    height: auto;
+  }
 }
 
-.styled-text {
-  color: #a9a9a9;
+@media (max-aspect-ratio: 16/9) {
+  .background-video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+// -------------------------------------------------- Main title --------------------------------------------------
+.main-title {
+  font-size: var(--fs-main);
+  color: #f2f2f2;
+  font-weight: 800;
+  width: fit-content;
+  overflow: hidden;
+  border-right: 0.15em solid #956f4f;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 1s steps(50, end) forwards, blink 1.5s infinite;
 }
 
 .typewriter-content {
   display: inline-block;
   width: fit-content;
-}
-
-.btn-main {
-  border-radius: 50px;
-
-  transition: transform 0.4s;
-}
-
-.btn-main:hover {
-  transform: scale(120%);
-}
-
-.main-title {
-  font-size: var(--fs-main);
-  font-weight: 800;
-  width: fit-content;
-  overflow: hidden;
-  border-right: 0.15em solid orange;
-  white-space: nowrap;
-  width: 0;
-  animation: typing 1s steps(50, end) forwards, blink 1.5s infinite;
 }
 
 @keyframes typing {
@@ -60,22 +73,38 @@
     border-color: transparent;
   }
   to {
-    border-color: orange;
+    border-color: #956f4f;
   }
 }
 
-.section-title {
-  text-align: center;
-  padding-bottom: 4rem;
-  padding-top: var(--video-padding);
+// -------------------------------------------------- Subtitle --------------------------------------------------
+.styled-text {
+  color: #956f4f;
+  font-weight: 700;
 }
 
+// -------------------------------------------------- Main button --------------------------------------------------
+.btn-main {
+  border-radius: 50px;
+
+  transition: transform 0.4s;
+}
+
+.btn-main:hover {
+  transform: scale(120%);
+}
+
+// -------------------------------------------------- Section title --------------------------------------------------
+.section-title {
+  text-align: center;
+}
+
+// -------------------------------------------------- Video flexbox --------------------------------------------------
 .flex-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; /* Change this according to your layout preference */
   align-items: center;
-  padding: 0% var(--video-padding) 0%;
 }
 
 .flex-item {
@@ -101,7 +130,7 @@
   left: 0;
   inset: 0; //sets the pseudo full width full height
   background: linear-gradient(180deg, rgba(21, 22, 24, 0.24) 0%, #151618 100%);
-  opacity: 0;
+  opacity: var(--video-cover-opacity);
 
   transition: opacity 0.5s ease-in-out;
 }
@@ -120,22 +149,37 @@
   opacity: 1;
 }
 
+// -------------------------------------------------- Video caption --------------------------------------------------
 .video-caption {
-  padding: 0 1em;
+  padding: 0 1rem 2rem 1rem;
   display: flex;
   flex-direction: column;
   width: 100%;
   position: absolute;
   color: antiquewhite;
-  opacity: 0;
-  font-size: var(--fs-video-caption);
+  opacity: var(--video-opacity);
+
+  h1 {
+    font-size: var(--fs-video-caption-title);
+  }
+
+  p {
+    font-size: var(--fs-video-caption-footer);
+  }
 
   transition: opacity 0.5s ease-in-out;
 }
 
 .video-footer {
-  display: flex;
-  justify-content: space-between;
+  p {
+    max-width: var(--video-footer-width);
+  }
+
+  a {
+    position: absolute;
+    right: 2vw;
+    top: 6vh;
+  }
 }
 
 .video {
@@ -144,20 +188,19 @@
   object-fit: cover; /* Crop the video to cover the container */
 }
 
+// -------------------------------------------------- Video caption button --------------------------------------------------
 .icon-lg {
   font-size: 30px;
   z-index: 10;
   color: antiquewhite;
 }
 
-.btn-huge {
-  font-size: var(--fs-xl);
-}
-
+// -------------------------------------------------- Go to the top button --------------------------------------------------
 .btn-bottom-corner {
   position: fixed;
   right: 3%;
   bottom: 5%;
+  font-size: var(--fs-xl);
 }
 
 .btn-bounce {

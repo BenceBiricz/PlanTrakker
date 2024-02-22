@@ -3,15 +3,20 @@
 
 // Set the MOBILE view
 :root {
-  --video-padding: 7%;
   --video-xl: 15rem;
   --video-flex-percent: 50%;
   --video-hight: 13rem;
+  --video-footer-width: 25vw;
 
-  --fs-main: clamp(2rem, 8vw, 6rem);
-  --fs-video-caption: clamp(0.5rem, 1rem, 2rem);
+  --fs-video-caption-title: 1.2rem;
+  --fs-video-caption-footer: 0.65rem;
+
+  --footer-img-size: 60px;
+
+  --fs-main: clamp(2rem, 8vw, 9rem);
   --fs-xl: 2.5rem;
   --fs-600: 1.5rem;
+  --fs-500: 0.75rem;
   --fs-400: 0.5rem;
 
   --blog-card-w: 22vw;
@@ -21,13 +26,19 @@
 // Set the DESKTOP view
 @media (min-width: 550px) {
   :root {
-    --video-padding: 0%;
     --video-xl: 15rem;
     --video-flex-percent: 33.33%;
     --video-hight: 15rem;
+    --video-footer-width: 16vw;
+
+    --fs-video-caption-title: 1.4rem;
+    --fs-video-caption-footer: 1rem;
+
+    --footer-img-size: 120px;
 
     --fs-xl: 3rem;
     --fs-600: 2rem;
+    --fs-500: 1.25rem;
     --fs-400: 1rem;
   }
 }
@@ -36,6 +47,33 @@
   :root {
     --video-flex-percent: 50%;
     --video-padding: 4% !important;
+    --video-footer-width: 22vw;
+
+    --fs-video-caption-title: 1.3rem;
+    --fs-video-caption-footer: 0.8rem;
+
+    --footer-img-size: 80px;
+
+    --fs-xl: 3rem;
+    --fs-600: 2rem;
+    --fs-500: 1.1rem;
+    --fs-400: 0.75rem;
+  }
+}
+
+// Set video caption always be visibleo n mobile devices
+@media (hover: hover) {
+  :root {
+    --video-opacity: 0;
+    --video-cover-opacity: 0;
+  }
+}
+
+@media (hover: none) {
+  :root {
+    --video-opacity: 1;
+
+    --video-cover-opacity: 0.7;
   }
 }
 
@@ -48,12 +86,18 @@
   gap: 20px;
 }
 
+.content-break {
+  margin-top: 8vh;
+  margin-bottom: 8vh;
+}
+
 .title {
   font-size: var(--fs-xl);
   font-weight: 800;
 }
 
 .sub-title {
+  color: #f2f2f2;
   font-size: var(--fs-600);
   padding-bottom: 25px;
   text-align: center;
@@ -74,14 +118,16 @@
 }
 
 .btn-black:hover {
-  color: #808080;
+  color: #6e5c61;
   cursor: pointer;
 }
 
 body {
-  background-size: 11px 11px;
-  background-image: linear-gradient(to right, #f2f2f2 10px, transparent 10px),
-    linear-gradient(to bottom, #f2f2f2 10px, transparent 10px) !important;
+  //background-size: 11px 11px;
+  // background-image: linear-gradient(to right, #f2f2f2 10px, transparent 10px),
+  //   linear-gradient(to bottom, #f2f2f2 10px, transparent 10px) !important;
+
+  background-color: #dfcfcf !important;
   scroll-behavior: smooth !important;
   font-family: Verdana, Geneva, Tahoma, sans-serif !important;
 }

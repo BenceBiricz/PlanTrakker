@@ -1,8 +1,27 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent {}
+export class NavbarComponent implements OnInit {
+  isMain = false;
+
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit(): void {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: any) => {
+        const activeRoute: string = event.url;
+        if (activeRoute.includes('main')) {
+          this.isMain = true;
+        } else {
+          this.isMain = false;
+        }
+      });
+  }
+}

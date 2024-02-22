@@ -1,5 +1,6 @@
 <nav
-  class="navbar sticky-top navbar-expand-lg navbar-background scroll-watcher"
+  class="navbar navbar-expand-lg scroll-watcher nav-positon"
+  [ngClass]="isMain ? '' : 'navbar-background'"
 >
   <div class="container-fluid">
     <div class="container">
@@ -16,7 +17,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="nav-container">
-          <img src="assets/icon.png" alt="" style="height: 70px" />
+          <img src="assets/logo_2.png" alt="" style="height: 70px" />
           <a class="nav-link" routerLink="main" routerLinkActive="active"
             >Home</a
           >

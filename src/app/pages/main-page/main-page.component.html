@@ -1,11 +1,10 @@
-<div class="image-cont">
-  <div class="background-div">
-    <!-- Content inside the div goes here -->
-  </div>
-</div>
+<video id="home" class="background-video" autoplay muted loop>
+  <source src="assets/danube.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
 <div class="container">
-  <section id="home" class="content-container">
+  <section class="content-container">
     <div class="typewriter-content">
       <h1 class="main-title">Plan Trekker</h1>
     </div>
@@ -24,11 +23,15 @@
 
   <hr />
 
-  <section id="bundles" class="content-container">
+  <section id="bundles" class="content-container content-break">
     <h2 class="title section-title">Let us plan your ideal day for You</h2>
 
     <div class="flex-container">
-      <div *ngFor="let video of adVideos" class="flex-item">
+      <a
+        *ngFor="let video of adVideos"
+        class="flex-item"
+        [routerLink]="'/packages/' + video.id + '/' + video.name"
+      >
         <div class="video-cover">
           <div class="video-caption">
             <h1>{{ video.title }}</h1>
@@ -45,14 +48,14 @@
           <source [src]="video.videoUrl" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </div>
+      </a>
     </div>
   </section>
 </div>
 
 <a
   #backButton
-  class="btn-huge btn-bottom-corner btn-bounce btn-black"
+  class="btn-bottom-corner btn-bounce btn-black"
   (click)="srollTo('home')"
   (scroll)="onScroll($event)"
 >

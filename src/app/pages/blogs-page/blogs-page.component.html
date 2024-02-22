@@ -3,12 +3,17 @@
     <div class="blog-title">Want to get some more ideas?</div>
 
     <div class="blog-flexbox">
-      <button class="btn scrollToEnd">
+      <button class="btn scrollToEnd" (click)="scrollTo()">
         <i class="bi bi-arrow-bar-right"></i>
       </button>
 
       <div *ngFor="let blog of blogs">
-        <div class="blog-card" (click)="onClick(blog.url)">
+        <div
+          #blogsid
+          [id]="blog.id"
+          class="blog-card"
+          (click)="onClick(blog.url)"
+        >
           <img class="package-img" [src]="blog.img" alt="" />
           <div class="blog-content">
             <h4>{{ blog.title }}</h4>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { BlogCaption } from './interfaces/blog-caption-interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blogs-page',
@@ -9,6 +10,8 @@ import { BlogCaption } from './interfaces/blog-caption-interface';
 export class BlogsPageComponent implements OnInit {
   blogs: BlogCaption[] = [];
 
+  constructor(private router: Router) {}
+
   ngOnInit(): void {
     this.blogs.push(
       {
@@ -16,6 +19,7 @@ export class BlogsPageComponent implements OnInit {
         text: 'Fill your bachelor party with groom-approved activities. From weekend getaways to nighttime options, explore the best and most unique bachelor party ideas.',
         url: 'https://www.zola.com/expert-advice/bachelor-party-ideas',
         img: 'assets/blogs/bachelor.jpg',
+        id: 'first',
       },
       {
         title: '10 Tips for Outdoor Adventure Vacations',
@@ -40,11 +44,16 @@ export class BlogsPageComponent implements OnInit {
         text: 'Cooking at home is one of those things that’s truly great if you enjoy cooking and is truly miserable if you don’t. ',
         url: 'https://theeverygirl.com/dinners-to-make-if-youre-bored-with-cooking-at-home/',
         img: 'assets/blogs/cooking.jpg',
+        id: 'last',
       }
     );
   }
 
   onClick(blogUrl: string) {
     window.open(blogUrl);
+  }
+
+  scrollTo() {
+    document.getElementById('blogsid')!.scrollLeft -= 200;
   }
 }
