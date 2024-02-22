@@ -1,6 +1,7 @@
-import { BundlesInterface } from './interfaces/bundle-interface';
+import { BundlesItemInterface } from './interfaces/bundles-item-interface';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { BundleBox } from './interfaces/bunlde-box-interface';
 
 @Component({
   selector: 'app-bundles-page',
@@ -8,58 +9,62 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   styleUrl: './bundles-page.component.scss',
 })
 export class BundlesPageComponent implements OnInit {
-  packageCards: BundlesInterface[] = [];
+  bundleBoxes: BundleBox[] = [];
+  bunldeItems: BundlesItemInterface[] = [];
 
-  constructor(private readonly route: Router) {}
-
-  ngOnInit() {
-    this.packageCards.push(
+  ngOnInit(): void {
+    this.bundleBoxes.push(
       {
-        id: this.createId(),
-        header: 'Header1',
-        title: 'First',
-        body: 'Sample',
+        title: 'Creative and tasty',
+        item: [
+          {
+            title: 'Chimney Cake Workshop',
+            svgPath: 'assets/bundles/chimney.svg',
+          },
+          {
+            title: 'Budapest Eye',
+            svgPath: 'assets/bundles/eye.svg',
+          },
+          {
+            title: 'Dinner at Divine Porcello',
+            svgPath: 'assets/bundles/dinner.svg',
+          },
+        ],
       },
       {
-        id: this.createId(),
-        header: 'Header2',
-        title: 'Second',
-        body: 'Sample',
+        title: 'Active date',
+        item: [
+          {
+            title: 'Cyber Jump - Trampoline Park',
+            svgPath: 'assets/bundles/jump.svg',
+          },
+          {
+            title: 'Cofee break at Ruszwurm',
+            svgPath: 'assets/bundles/coffee.svg',
+          },
+          {
+            title: 'Sightseeing cruise with unlimited prosecco',
+            svgPath: 'assets/bundles/ship.svg',
+          },
+        ],
       },
       {
-        id: this.createId(),
-        header: 'Header3',
-        title: 'Third',
-        body: 'Sample',
-      },
-      {
-        id: this.createId(),
-        header: 'Header3',
-        title: 'Third',
-        body: 'Sample',
-      },
-      {
-        id: this.createId(),
-        header: 'Header3',
-        title: 'Third',
-        body: 'Sample',
-      },
-      {
-        id: this.createId(),
-        header: 'Header3',
-        title: 'Third',
-        body: 'Sample',
+        title: 'Relaxing Day',
+        item: [
+          {
+            title: 'Brunch at Zoska',
+            svgPath: 'assets/bundles/croissant.svg',
+          },
+          {
+            title: 'Dandár Thermal Bath',
+            svgPath: 'assets/bundles/bath.svg',
+          },
+          {
+            title: 'Cinema Mystica Exhibition',
+            svgPath: 'assets/bundles/ticket.svg',
+          },
+        ],
       }
     );
-  }
-
-  createId() {
-    let max = 9999;
-    let min = 1000;
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  navigateToPackage(packageCard: BundlesInterface) {
-    this.route.navigate(['/packages', packageCard.id, packageCard.title]);
   }
 }

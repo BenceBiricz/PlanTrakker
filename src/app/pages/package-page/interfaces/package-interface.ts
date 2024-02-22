@@ -1,4 +1,4 @@
-export interface BundlesInterface {
+export interface PackageInterface {
   id: number;
   header: string;
   title: string;

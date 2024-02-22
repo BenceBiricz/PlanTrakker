@@ -5,6 +5,7 @@ import { PackagePageComponent } from './pages/package-page/package-page.componen
 import { BundlesPageComponent } from './pages/bundles-page/bundles-page.component';
 import { BlogsPageComponent } from './pages/blogs-page/blogs-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { AboutUsPageComponent } from './pages/about-us-page/about-us-page.component';
 
 const routes: Routes = [
   {
@@ -12,12 +13,16 @@ const routes: Routes = [
     component: MainPageComponent,
   },
   {
+    path: 'bundles/:packageId/:packageName',
+    component: BundlesPageComponent,
+  },
+  {
     path: 'packages/:packageId/:packageName',
     component: PackagePageComponent,
   },
   {
-    path: 'packages',
-    component: BundlesPageComponent,
+    path: 'about-us',
+    component: AboutUsPageComponent,
   },
   {
     path: 'blogs',
