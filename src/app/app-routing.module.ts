@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: MainPageComponent,
+    redirectTo: 'main',
   },
 ];
 

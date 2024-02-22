@@ -3,7 +3,7 @@
   [ngClass]="isMain ? '' : 'navbar-background'"
 >
   <div class="container-fluid">
-    <div class="container">
+    <div class="containera">
       <button
         class="navbar-toggler"
         type="button"
@@ -17,16 +17,22 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="nav-container">
-          <img src="assets/logo_2.png" alt="" style="height: 70px" />
-          <a class="nav-link" routerLink="main" routerLinkActive="active"
-            >Home</a
-          >
-          <a class="nav-link" routerLink="/packages" routerLinkActive="active"
-            >Events</a
-          >
-          <a class="nav-link" routerLink="/blogs" routerLinkActive="active"
-            >Blogs</a
-          >
+          <div class="inner">
+            <img src="assets/logo_2.png" alt="" style="height: 70px" />
+            <a class="nav-link" routerLink="main" routerLinkActive="active"
+              >Home</a
+            >
+            <a class="nav-link" routerLink="/packages" routerLinkActive="active"
+              >About us</a
+            >
+            <a class="nav-link" routerLink="/blogs" routerLinkActive="active"
+              >Reviews</a
+            >
+          </div>
+          <div class="inner">
+            <a class="nav-link"><i class="bi bi-tiktok"></i></a>
+            <a class="nav-link"><i class="bi bi-instagram"></i></a>
+          </div>
         </div>
       </div>
     </div>

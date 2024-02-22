@@ -1,18 +1,27 @@
 .nav-positon {
   position: fixed;
-  width: 100%;
   z-index: 100;
+  width: 100%;
 }
 
 .nav-container {
   font-size: 1.5rem;
   display: flex;
   gap: 60px;
+  justify-content: space-between;
+  width: 80vw;
+  margin-left: 10vw;
+  align-items: center;
+
+  .inner {
+    display: flex;
+    gap: 60px;
+    justify-content: end;
+  }
 }
 
 .navbar-background {
-  background-color: #f2f2f2;
-  //background-color: #dfcfcf;
+  background-color: #dfcfcf;
   opacity: 0.8;
 }
 

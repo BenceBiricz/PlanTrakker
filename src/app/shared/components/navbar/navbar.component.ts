@@ -8,7 +8,7 @@ import { filter } from 'rxjs';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent implements OnInit {
-  isMain = false;
+  isMain = true;
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         const activeRoute: string = event.url;
-        if (activeRoute.includes('main')) {
+        if (activeRoute.includes('main') || activeRoute === '/') {
           this.isMain = true;
         } else {
           this.isMain = false;

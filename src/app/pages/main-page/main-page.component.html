@@ -1,5 +1,12 @@
-<video id="home" class="background-video" autoplay muted loop>
-  <source src="assets/main-video.mp4" type="video/mp4" />
+<video
+  id="home"
+  *ngIf="mainVideoPath"
+  class="background-video"
+  [autoplay]="true"
+  [muted]="true"
+  [loop]="true"
+>
+  <source [src]="mainVideoPath" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
@@ -124,83 +131,6 @@
           stroke="black"
         />
       </svg>
-
-      <!-- <svg
-        class="lines"
-        width="6242"
-        height="219"
-        viewBox="0 0 6242 719"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8.49998 311C-21.636 362.392 169.8 713.121 325.783 713.121M516.088 713.121C576.776 715.087 628.619 704.532 671.513 685.556C767.487 643.097 818.662 558.479 823.869 477.623C831.403 360.631 687.698 288.681 610.962 372.118C534.226 455.555 516.088 685.556 823.869 713.121M865.5 713.121C1038 698 1113 703.446 1251 460"
-          stroke="black"
-          stroke-width="10"
-          stroke-dasharray="50 50"
-        />
-        <path
-          d="M1306 280C1332.98 145.378 1356.07 117.134 1449.5 78.4993M2982 5.49927C3090 78.4994 3204.5 5.49932 3280 5.49927M3646 264.999C3950.5 308.499 3703 486 4009.5 611.499M4346 611.499C4718.37 679.192 4981.41 645.679 5320 530.999M5704.5 383C5897 308.499 6097.64 411.827 6238 264.999"
-          stroke="black"
-          stroke-width="10"
-          stroke-dasharray="50 50"
-        />
-      </svg>
-
-      <svg
-        class="planes"
-        width="5284"
-        height="427"
-        viewBox="0 0 5284 427"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M946.893 10.2641L874.296 60.8315L891.881 74.4921L946.893 10.2641Z"
-          fill="black"
-        />
-        <path
-          d="M909.001 96.9217L946.893 10.2641L896.02 78.7965L909.001 96.9217Z"
-          fill="black"
-        />
-        <path
-          d="M946.893 10.2641L874.296 60.8315L891.881 74.4921L946.893 10.2641ZM946.893 10.2641L909.001 96.9217L896.02 78.7965L946.893 10.2641Z"
-          stroke="black"
-        />
-        <path
-          d="M3936.37 269.139L3692.31 239.268L3702.17 291.972L3936.37 269.139Z"
-          fill="black"
-        />
-        <path
-          d="M3694.4 359.305L3936.37 269.139L3702.42 306.288L3694.4 359.305Z"
-          fill="black"
-        />
-        <path
-          d="M3936.37 269.139L3692.31 239.268L3702.17 291.972L3936.37 269.139ZM3936.37 269.139L3694.4 359.305L3702.42 306.288L3936.37 269.139Z"
-          stroke="black"
-        />
-        <path
-          d="M5270.62 94.4619L5024.79 98.9919L5041.85 149.806L5270.62 94.4619Z"
-          fill="black"
-        />
-        <path
-          d="M5043.49 217.57L5270.62 94.4619L5044.08 163.948L5043.49 217.57Z"
-          fill="black"
-        />
-        <path
-          d="M5270.62 94.4619L5024.79 98.9919L5041.85 149.806L5270.62 94.4619ZM5270.62 94.4619L5043.49 217.57L5044.08 163.948L5270.62 94.4619Z"
-          stroke="black"
-        />
-        <path
-          d="M109.539 386.5L1 371L4.98307 395L109.539 386.5Z"
-          fill="black"
-        />
-        <path d="M1 425.5L109.539 386.5L4.98307 401.5L1 425.5Z" fill="black" />
-        <path
-          d="M109.539 386.5L1 371L4.98307 395L109.539 386.5ZM109.539 386.5L1 425.5L4.98307 401.5L109.539 386.5Z"
-          stroke="black"
-        />
-      </svg> -->
     </div>
 
     <div class="flex-container">
@@ -221,7 +151,7 @@
           </div>
         </div>
         <!-- Video 1 -->
-        <video class="video" autoplay muted loop>
+        <video class="video" [autoplay]="true" [muted]="true" [loop]="true">
           <source [src]="video.videoUrl" type="video/mp4" />
           Your browser does not support the video tag.
         </video>

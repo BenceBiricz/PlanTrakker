@@ -17,6 +17,8 @@ export class MainPageComponent implements OnInit {
   @ViewChild('backButton') backButton!: ElementRef;
   adVideos: VideoInterface[] = [];
 
+  mainVideoPath = 'assets/main-video.mp4';
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {

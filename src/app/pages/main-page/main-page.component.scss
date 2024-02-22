@@ -72,7 +72,6 @@
 .box {
   flex-basis: 25%;
   height: 100px;
-  //border: solid black;
   background-color: #f2f2f2;
   box-shadow: 10px 10px 15px rgb(0, 0, 0, 0.3);
   border-radius: 15px;
@@ -102,8 +101,8 @@
 
 .overlay {
   z-index: -5;
-  background: linear-gradient(#f2f2f2, #dfcfcf);
-  opacity: 0.4;
+  background: linear-gradient(180deg, #dfcfcf, #6e5c61);
+  opacity: 0.6;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -132,9 +131,10 @@
   font-weight: 800;
   width: fit-content;
   overflow: hidden;
-  border-right: 0.15em solid #956f4f;
+  border-right: 0.15em solid #77563a;
   white-space: nowrap;
   width: 0;
+
   animation: typing 1s steps(50, end) forwards, blink 1.5s infinite;
 }
 
@@ -157,13 +157,13 @@
     border-color: transparent;
   }
   to {
-    border-color: #956f4f;
+    border-color: #77563a;
   }
 }
 
 // -------------------------------------------------- Subtitle --------------------------------------------------
 .styled-text {
-  color: #956f4f;
+  color: #77563a;
   font-weight: 700;
 }
 
