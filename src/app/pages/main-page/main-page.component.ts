@@ -42,7 +42,7 @@ export class MainPageComponent implements OnInit {
         name: 'bachelor',
         title: 'Hen & stag parties',
         text: 'Drift away on tranquil waters and scenic vistas',
-        videoUrl: 'assets/danube.mp4',
+        videoUrl: 'assets/party.mp4',
       },
       {
         id: 4,
@@ -66,6 +66,21 @@ export class MainPageComponent implements OnInit {
         videoUrl: 'assets/danube.mp4',
       }
     );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    });
+
+    const hiddenELements = document.querySelectorAll('.hidden');
+    hiddenELements.forEach((el) => {
+      observer.observe(el);
+    });
   }
 
   srollTo(fragment: string) {

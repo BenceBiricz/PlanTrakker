@@ -16,7 +16,7 @@ span {
   flex-basis: calc(33.33% + 20px);
   background-color: white;
   height: 50vh;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 10px 10px 15px rgb(0, 0, 0, 0.4);
 
   .box-title {
@@ -35,8 +35,30 @@ span {
     gap: 15px;
 
     img {
-      height: 100px;
-      width: 100px;
+      height: 50px;
+      width: 50px;
     }
+  }
+}
+
+.lines {
+  z-index: -10;
+  position: absolute;
+  width: 35%;
+  top: 15%;
+  left: 3%;
+  stroke-dasharray: 40 40;
+  stroke-linecap: round;
+  stroke-dashoffset: 600;
+  stroke: #8b7e7c;
+
+  #line {
+    animation: 10s linear infinite dash;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
   }
 }
