@@ -3,6 +3,16 @@ span {
   font-size: var(--fs-500);
 }
 
+.date-title {
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 600;
+}
+
+.date-flex {
+  display: flex;
+  flex-direction: column;
+}
+
 .bundle-flexbox {
   padding-top: 6vh;
   display: flex;
@@ -10,14 +20,20 @@ span {
   align-items: center;
   width: 100%;
   gap: 30px;
+  flex-wrap: var(--flex-wrap);
 }
 
 .bundle-box {
-  flex-basis: calc(33.33% + 20px);
-  background-color: white;
+  flex-basis: calc(var(--flex-basis) + 20px);
+  background: radial-gradient(
+    circle,
+    white,
+    rgb(234, 236, 227),
+    rgb(165, 175, 202)
+  );
   height: 50vh;
   border-radius: 10px;
-  box-shadow: 10px 10px 15px rgb(0, 0, 0, 0.4);
+  box-shadow: 10px 10px 15px rgb(0, 0, 0, 0.5);
 
   .box-title {
     text-align: center;
@@ -45,7 +61,7 @@ span {
   z-index: -10;
   position: absolute;
   width: 35%;
-  top: 15%;
+  top: 9%;
   left: 3%;
   stroke-dasharray: 40 40;
   stroke-linecap: round;

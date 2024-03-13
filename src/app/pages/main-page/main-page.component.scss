@@ -83,7 +83,7 @@
   p {
     padding: 15px;
     font-weight: bold;
-    font-size: var(--fs-500);
+    font-size: clamp(0.6rem, 2vw, 1rem);
   }
 }
 

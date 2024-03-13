@@ -19,8 +19,10 @@
   --fs-500: 0.75rem;
   --fs-400: 0.5rem;
 
-  --blog-card-w: 22vw;
-  --blog-card-h: 60vh;
+  --blog-card-w: 80vw;
+
+  --flex-wrap: wrap;
+  --flex-basis: 95%;
 }
 
 // Set the DESKTOP view
@@ -40,6 +42,11 @@
     --fs-600: 2rem;
     --fs-500: 1.25rem;
     --fs-400: 1rem;
+
+    --blog-card-w: 20vw;
+
+    --flex-wrap: nowrap;
+    --flex-basis: 33.33%;
   }
 }
 

@@ -9,6 +9,7 @@ import { filter } from 'rxjs';
 })
 export class NavbarComponent implements OnInit {
   isMain = true;
+  navOpened = false;
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -23,5 +24,9 @@ export class NavbarComponent implements OnInit {
           this.isMain = false;
         }
       });
+  }
+
+  showNavbar() {
+    this.navOpened = !this.navOpened;
   }
 }

@@ -20,6 +20,20 @@
   }
 }
 
+.nav-mobile-container {
+  font-size: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2vh;
+  background-color: #dfcfcf;
+
+  a {
+    width: 100vw;
+    text-align: center;
+  }
+}
+
 .navbar-background {
   //background-color: #dfcfcf;
   //opacity: 0.5;

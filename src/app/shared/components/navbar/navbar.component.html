@@ -3,38 +3,47 @@
   [ngClass]="isMain ? '' : 'navbar-background'"
 >
   <div class="container-fluid">
-    <div class="containera">
+    <div class="container">
       <button
         class="navbar-toggler"
         type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
         aria-label="Toggle navigation"
+        (click)="showNavbar()"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="collapse navbar-collapse">
         <div class="nav-container">
           <div class="inner">
             <img src="assets/logo_2.png" alt="" style="height: 70px" />
             <a class="nav-link" routerLink="main" routerLinkActive="active"
               >Home</a
             >
-            <a class="nav-link" routerLink="/about-us" routerLinkActive="active"
+            <!-- <a class="nav-link" routerLink="/about-us" routerLinkActive="active"
               >About us</a
-            >
+            > -->
             <a class="nav-link" routerLink="/blogs" routerLinkActive="active"
-              >Reviews</a
+              >Blogs</a
             >
           </div>
-          <div class="inner">
+          <!-- <div class="inner">
             <a class="nav-link"><i class="bi bi-tiktok"></i></a>
             <a class="nav-link"><i class="bi bi-instagram"></i></a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
+  </div>
+
+  <div *ngIf="navOpened" class="nav-mobile-container">
+    <a class="nav-link" routerLink="main" routerLinkActive="active">Home</a>
+    <!-- <a class="nav-link" routerLink="/about-us" routerLinkActive="active"
+      >About us</a
+    > -->
+    <a class="nav-link" routerLink="/blogs" routerLinkActive="active">Blogs</a>
+    <!-- <div class="inner">
+      <a class="nav-link"><i class="bi bi-tiktok"></i></a>
+      <a class="nav-link"><i class="bi bi-instagram"></i></a>
+    </div> -->
   </div>
 </nav>
