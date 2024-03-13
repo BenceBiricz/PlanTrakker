@@ -2,6 +2,7 @@ import { BundlesItemInterface } from './interfaces/bundles-item-interface';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { BundleBox } from './interfaces/bunlde-box-interface';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-bundles-page',
@@ -12,7 +13,20 @@ export class BundlesPageComponent implements OnInit {
   bundleBoxes: BundleBox[] = [];
   bunldeItems: BundlesItemInterface[] = [];
 
+  mobileMode = false;
+
+  constructor(private readonly breabpointObserver: BreakpointObserver) {}
+
   ngOnInit(): void {
+    this.breabpointObserver
+      .observe([Breakpoints.XSmall, Breakpoints.Small])
+      .subscribe((result) => {
+        this.mobileMode = false;
+        if (result.matches) {
+          this.mobileMode = true;
+        }
+      });
+
     this.bundleBoxes.push(
       {
         title: 'Creative and tasty',
