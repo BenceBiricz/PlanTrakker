@@ -42,44 +42,44 @@ export class MainPageComponent implements OnInit {
         id: 1,
         name: 'date',
         title: 'Date ideas',
-        text: 'Explore urban wonders and iconic landmarks',
-        videoUrl: 'assets/smaller/parlament.mp4',
+        text: 'Crafting unforgettable moments for lasting connections.',
+        videoUrl: 'assets/smaller/date.mp4',
       },
       {
         id: 2,
         name: 'birthday',
         title: 'The perfect birthday',
-        text: 'Glide gracefully on a frozen wonderland',
+        text: 'Making every birthday moment truly exceptional.',
         videoUrl: 'assets/smaller/skating.mp4',
       },
       {
         id: 3,
         name: 'bachelor',
         title: 'Hen & stag parties',
-        text: 'Drift away on tranquil waters and scenic vistas',
+        text: 'Planning unforgettable pre-wedding celebrations together.',
         videoUrl: 'assets/smaller/party.mp4',
-      },
-      {
-        id: 4,
-        name: 'indoor',
-        title: 'Indoor activities',
-        text: `Embark on nature's path to adventure and serenity`,
-        videoUrl: 'assets/smaller/hiking.mp4',
-      },
-      {
-        id: 5,
-        name: 'outdoor',
-        title: 'Outdoor activities',
-        text: 'Let loose and celebrate in style under city lights',
-        videoUrl: 'assets/smaller/pool.mp4',
-      },
-      {
-        id: 6,
-        name: 'explore',
-        title: 'Explore Budapest',
-        text: 'Splash into a world of fun and excitement in the water realm',
-        videoUrl: 'assets/smaller/danube.mp4',
       }
+      // {
+      //   id: 4,
+      //   name: 'indoor',
+      //   title: 'Indoor activities',
+      //   text: `Find Homebound Happiness with Indoor Activities.`,
+      //   videoUrl: 'assets/smaller/indoor.mp4',
+      // },
+      // {
+      //   id: 5,
+      //   name: 'outdoor',
+      //   title: 'Outdoor activities',
+      //   text: `Embrace Nature's Playground for Fun.`,
+      //   videoUrl: 'assets/smaller/pool.mp4',
+      // },
+      // {
+      //   id: 6,
+      //   name: 'explore',
+      //   title: 'Explore Budapest',
+      //   text: `Immersing in Budapest's Beauty`,
+      //   videoUrl: 'assets/smaller/danube.mp4',
+      // }
     );
 
     const observer = new IntersectionObserver((entries) => {

@@ -1,6 +1,13 @@
+.container {
+  min-height: 100vh;
+  padding-top: 12vh;
+}
+
 span {
   padding-top: 1vh;
   font-size: var(--fs-500);
+  max-width: 40vw;
+  text-align: center;
 }
 
 .date-title {
