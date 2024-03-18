@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "plantrekker-c64cb"
-  }
+    "default": "plantrekker-c64cb",
+    "planTrekker": "plantrekker-c64cb"
+  },
+  "targets": {},
+  "etags": {}
 }

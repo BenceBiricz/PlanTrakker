@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/travel-planner/browser",
+    "public": "dist/planTrekker/browser",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
