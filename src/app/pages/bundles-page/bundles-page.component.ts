@@ -23,7 +23,7 @@ export class BundlesPageComponent implements OnInit {
 
   constructor(
     private readonly breabpointObserver: BreakpointObserver,
-    private fireStoreService: FireStoreService,
+    //private fireStoreService: FireStoreService,
     private router: Router
   ) {}
 
